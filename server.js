@@ -4,11 +4,11 @@ const app = express();
 const port = process.env.PORT || 3003;
 
 // Configure the app (app.set)
-const fs = require('fs') // this engine requires the fs module like we did Saturday
+const fs = require('fs') // this engine requires the fs module 
 app.engine('hypatia', (filePath, options, callback) => { // define the view engine called hypatia
   fs.readFile(filePath, (err, content) => {
     if (err) return callback(err)
-    // this is an extremely simple view engine we'll be more complex later
+    //simple view engine from hypatia sheet
     const rendered = content.toString()
       .replace('#title#', '<title>' + options.title + '</title>')
       .replace('#message#', '<h1>' + options.message + '</h1>').replace('#content#','<div>'+ options.content + '</div>' )
@@ -33,12 +33,13 @@ app.get('/greetings/:name', (req, res) => {
 // });
 
 // app.get('/tip/:total/:percentage', (req, res) => {
-//     res.render('form', { title: 'TipPercent', message: 'The total is $ ' + req.params.total + ', and your tabulated tip is $ ' + req.params.percentage + ''});
+//     let tip = (req.params.total*req.params.percentage/100);
+//     res.render('form', { title: 'TipPercent', message: 'The total is $ ' + req.params.total + ', and your tabulated tip is $ ' + tip + ''});
 //   });
 
 
 
 // Tell the app to listen on port 3000
-app.listen(3000, function() {
- console.log('Listening on port 3000');
+app.listen(port, function() {
+ console.log('Listening on port', port);
 });
