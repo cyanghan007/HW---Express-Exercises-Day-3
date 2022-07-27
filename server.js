@@ -18,23 +18,23 @@ app.engine('hypatia', (filePath, options, callback) => { // define the view engi
 app.set('views', './views') // specify the views directory
 app.set('view engine', 'hypatia') // register the hypatia view engine
 
-// route
+// greetings route
 app.get('/greetings/', (req, res) => {
     res.send('greetings');
 });
 
-// Mount routes
+//
 app.get('/greetings/:name', (req, res) => {
     res.send("what's up, " + req.params.name);
 });
 
-// app.get('/tip', (req, res) => {
-//     res.render('form', { title: 'Hey', message: 'Rick Ross!', content: 'The most underated Rapper in the game' })
-//   })
+// app.get('/tip/:total', (req, res) => {
+//     res.send('Total is $' + req.params.total);
+// });
 
-// app.get('/another-one', (req, res) => {
-//     res.render('template', { title: 'We The Best', message: 'Who!', content: 'We Taking Over, Major Key Alert, Yall know who it is, All I do is win' })
-//   })
+// app.get('/tip/:total/:percentage', (req, res) => {
+//     res.render('form', { title: 'TipPercent', message: 'The total is $ ' + req.params.total + ', and your tabulated tip is $ ' + req.params.percentage + ''});
+//   });
 
 
 
