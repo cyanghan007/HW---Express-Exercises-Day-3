@@ -1,0 +1,8 @@
+<head>
+#title#
+</head>
+<body>
+<header>#name#</header>
+#content#
+    <nav>total</nav>
+</body>

@@ -27,7 +27,14 @@ app.get('/greetings/', (req, res) => {
 app.get('/greetings/:name', (req, res) => {
     res.send("what's up, " + req.params.name);
 });
-  
+
+// app.get('/tip', (req, res) => {
+//     res.render('form', { title: 'Hey', message: 'Rick Ross!', content: 'The most underated Rapper in the game' })
+//   })
+
+// app.get('/another-one', (req, res) => {
+//     res.render('template', { title: 'We The Best', message: 'Who!', content: 'We Taking Over, Major Key Alert, Yall know who it is, All I do is win' })
+//   })
 
 
 
